@@ -1,1 +1,152 @@
-<h1>Hello from GitHub Pages</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Alert — Account Compromised</title>
+<style>
+  :root {
+    --danger: #e63946;
+    --bg-dark: #0a0f1a;
+    --card: #131c2b;
+    --text: #e6eef6;
+    --muted: #a8b3c3;
+    --success: #06d6a0;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, #050a12 0%, #0b1220 100%);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    padding: 36px 40px;
+    max-width: 700px;
+    width: 90%;
+    animation: fadeIn 0.8s ease-in;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .alert {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--danger);
+    color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    font-weight: bold;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .blink {
+    animation: blinkAnimation 1s steps(2, start) infinite;
+  }
+
+  @keyframes blinkAnimation {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  .reveal {
+    display: none;
+    margin-top: 18px;
+    background: rgba(6,214,160,0.1);
+    border-left: 4px solid var(--success);
+    padding: 14px 18px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in;
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: var(--success);
+  }
+
+  ol {
+    padding-left: 22px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    margin-top: 22px;
+    display: inline-block;
+    background: linear-gradient(90deg, var(--danger), #ff7a6a);
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255,100,100,0.4);
+  }
+
+  footer {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="alert blink" id="dangerAlert">
+      ⚠️ Suspicious Activity Detected! ⚠️
+    </div>
+
+    <div class="reveal" id="revealSection">
+
+      <p><strong>✅ No worries!</strong> This is an internal Information Security Team phishing simulation exercise designed to test your awareness against phishing attacks. Unfortunately, your submission indicates you were tricked by the simulated phishing attempt.</p>
+      
+      <p>Don't worry — your account remains secure. Use this as a learning opportunity to strengthen your defenses.</p>
+      
+      <h3>Key Tips to Avoid Phishing in the Future:</h3>
+      <ol>
+        <li>Always verify the sender’s email address before clicking links.</li>
+        <li>Never enter credentials on unfamiliar or suspicious pages.</li>
+        <li>Hover over links to check their true destination before clicking.</li>
+        <li>Be cautious of emails that create a sense of urgency or panic.</li>
+        <li>Report suspicious emails immediately to the Security Team.</li>
+      </ol>
+
+
+      <a href="mailto:infosec@platform3solutions.com" class="btn">📩 Contact Security Team</a>
+    </div>
+
+    <footer>
+      © 2025 Platform 3 Solutions Pvt Ltd — Information Security Awareness Initiative
+    </footer>
+  </div>
+
+  <script>
+    // Blink alert for 5 seconds, then show reveal section
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('dangerAlert').style.display = 'none';
+        document.getElementById('revealSection').style.display = 'block';
+      }, 5000); // 5-second blink duration
+    });
+  </script>
+</body>
+</html>
